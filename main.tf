@@ -2,8 +2,8 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_security_group" "Review" {
-    name = "Review"
+resource "aws_security_group" "Review2" {
+    name = "Review2"
     ingress {
         description = "http"
         from_port = 80
@@ -45,12 +45,12 @@ resource "aws_security_group" "Review" {
     }
 }
 
-resource "aws_instance" "Amazon_Linux2" {
+resource "aws_instance" "Amazon_Linux22" {
     instance_type = "t2.medium"
     ami = "ami-02d7fd1c2af6eead0"
     key_name = "GenPair"
     tags = {
-        Name = "Amazon_Linux2"
+        Name = "Amazon_Linux22"
     }
 
     user_data = <<-EOF
