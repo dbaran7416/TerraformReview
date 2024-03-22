@@ -2,8 +2,8 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_security_group" "Day21" {
-    name = "Day21"
+resource "aws_security_group" "Review" {
+    name = "Review"
     ingress {
         description = "http"
         from_port = 80
@@ -66,5 +66,5 @@ resource "aws_instance" "Amazon_Linux2" {
         echo "This is for hostname $(hostname -f)" >> /var/www/html/index.html
     EOF
 
-    vpc_security_group_ids = [aws_security_group.Day21.id]
+    vpc_security_group_ids = [aws_security_group.Review.id]
 }
